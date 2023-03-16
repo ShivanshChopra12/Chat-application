@@ -3,7 +3,7 @@ import java.net.*;
 
 class Server{
 
-    ServerSocket server;
+    ServerSocket server; //ServerSocket is a java.net class provides system-independent implementation of the server side of a client/server socket connection.
     Socket socket;
 
     BufferedReader br;
@@ -12,7 +12,7 @@ class Server{
     //Constructor
     public Server(){
         try {
-            server = new ServerSocket(7777);
+            server = new ServerSocket(7777); //defining port
             System.out.println("server is ready to to accept connection");
             System.out.println("waiting...");
             socket=server.accept();
@@ -31,7 +31,7 @@ class Server{
 
     public void startReading(){
         // thread-read karke deta rahega
-        Runnable r1=()->{
+        Runnable r1=()->{  //Using Lambda function
             System.out.println("reader started..");
 
             try {
@@ -59,7 +59,7 @@ class Server{
     }
 
     public void startWriting(){
-        // threaad- data ko user se lega and then send karega client tak
+        // thread- data ko user se lega and then send karega client tak
         Runnable r2 = () ->{
             System.out.println("Writer Started");
 
